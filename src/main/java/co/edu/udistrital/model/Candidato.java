@@ -11,6 +11,7 @@ package co.edu.udistrital.model;
 public class Candidato {
     
     private int id;
+    private Caracteristica caracteristicas;
     
     public Candidato(int id){
         this.id = id;
