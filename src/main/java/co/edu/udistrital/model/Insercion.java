@@ -6,21 +6,18 @@ package co.edu.udistrital.model;
 
 /**
  *
- * @author sedel
+ * @author bethods
  */
-public class Candidato {
+public class Insercion extends Ordenamiento{
     
-    private int id;
+    @Override
+    public void invertido(){}
     
-    public Candidato(int id){
-        this.id = id;
-    }
+    @Override
+    public void levementeOrdenado(){}
     
-    public void setId(int id){
-        this.id = id;
-    }
+    @Override
+    public void aleatorio(){}
+
     
-    public int getId(){
-        return id;
-    }
 }

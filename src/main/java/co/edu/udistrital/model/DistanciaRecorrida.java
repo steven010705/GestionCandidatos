@@ -6,21 +6,10 @@ package co.edu.udistrital.model;
 
 /**
  *
- * @author sedel
+ * @author bethods
  */
-public class Candidato {
+public class DistanciaRecorrida extends Evento{
     
-    private int id;
-    
-    public Candidato(int id){
-        this.id = id;
-    }
-    
-    public void setId(int id){
-        this.id = id;
-    }
-    
-    public int getId(){
-        return id;
-    }
+    @Override
+    public void random(int c){}
 }
