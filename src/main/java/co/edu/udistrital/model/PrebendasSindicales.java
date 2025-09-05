@@ -6,21 +6,11 @@ package co.edu.udistrital.model;
 
 /**
  *
- * @author sedel
+ * @author bethods
  */
-public class Candidato {
+public class PrebendasSindicales extends Evento {
     
-    private int id;
+    @Override
+    public void random(int c){}
     
-    public Candidato(int id){
-        this.id = id;
-    }
-    
-    public void setId(int id){
-        this.id = id;
-    }
-    
-    public int getId(){
-        return id;
-    }
 }
