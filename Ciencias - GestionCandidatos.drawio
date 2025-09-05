@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" version="28.1.2">
   <diagram name="Página-1" id="-oZgg3mU6KCud4trMh2t">
-    <mxGraphModel dx="2864" dy="1133" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="3420" dy="1442" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -265,7 +265,7 @@
             <mxPoint x="750" y="469.04347826086973" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="CFLX2MblqfqqQ0-nksOQ-70" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.387;entryY=0;entryDx=0;entryDy=0;endArrow=classic;endFill=1;startArrow=classic;startFill=1;entryPerimeter=0;" parent="1" source="CFLX2MblqfqqQ0-nksOQ-2" target="CFLX2MblqfqqQ0-nksOQ-15" edge="1">
+        <mxCell id="CFLX2MblqfqqQ0-nksOQ-70" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.387;entryY=0;entryDx=0;entryDy=0;endArrow=diamond;endFill=1;startArrow=open;startFill=0;entryPerimeter=0;" parent="1" source="CFLX2MblqfqqQ0-nksOQ-2" target="CFLX2MblqfqqQ0-nksOQ-15" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="CFLX2MblqfqqQ0-nksOQ-76" value="Control" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
