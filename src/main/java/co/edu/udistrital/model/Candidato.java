@@ -9,9 +9,9 @@ import java.util.Arrays;
 
 public class Candidato {
     private int id;
-    private int[] caracteristicas; // arreglo de enteros que representan los 5 atributos
-
-    public Candidato(int id, int numCaracteristicas) {
+    private Caracteristica caracteristicas;
+    
+    public Candidato(int id){
         this.id = id;
         this.caracteristicas = new int[numCaracteristicas];
     }

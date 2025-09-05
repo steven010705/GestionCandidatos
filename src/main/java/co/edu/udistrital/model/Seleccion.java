@@ -8,6 +8,14 @@ package co.edu.udistrital.model;
  *
  * @author bethods
  */
-public class Seleccion {
+public class Seleccion extends Ordenamiento {
     
+    @Override
+    public void invertido(){}
+    
+    @Override
+    public void levementeOrdenado(){}
+    
+    @Override
+    public void aleatorio(){}
 }

@@ -10,4 +10,9 @@ package co.edu.udistrital.model;
  */
 public class Caracteristica {
     
+    private HorasPerdidas horasPerdidas [];
+    private DistanciaRecorrida distanciaRecorrida [];
+    private SobornosRecibidos sobornosRecibidos [];
+    private PrebendasSindicales prebendasSindicales[];
+    private TotalCorrupcion totalCorrupcion[];
 }
