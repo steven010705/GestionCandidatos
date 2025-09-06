@@ -5,17 +5,63 @@
 package co.edu.udistrital.model;
 
 /**
- *
- * @author bethods
+ * Implementación del algoritmo de Selección Asignado a la característica:
+ * SobornosRecibidos
  */
 public class Seleccion extends Ordenamiento {
-    
+
     @Override
-    public void invertido(){}
-    
+    public int[] Invertido(int[] datos) {
+        int[] copia = datos.clone();
+        selectionSort(copia);
+        invertir(copia);
+        return copia;
+    }
+
     @Override
-    public void levementeOrdenado(){}
-    
+    public int[] LevementeOrdenado(int[] datos) {
+        int[] copia = datos.clone();
+        // Ordenar parcialmente (solo mitad del arreglo)
+        for (int i = 0; i < copia.length / 2; i++) {
+            int minIdx = i;
+            for (int j = i + 1; j < copia.length / 2; j++) {
+                if (copia[j] < copia[minIdx]) {
+                    minIdx = j;
+                }
+            }
+            int temp = copia[minIdx];
+            copia[minIdx] = copia[i];
+            copia[i] = temp;
+        }
+        return copia;
+    }
+
     @Override
-    public void aleatorio(){}
+    public int[] Aleatorio(int[] datos) {
+        int[] copia = datos.clone();
+        selectionSort(copia);
+        return copia;
+    }
+
+    private void selectionSort(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            int minIdx = i;
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] < arr[minIdx]) {
+                    minIdx = j;
+                }
+            }
+            int temp = arr[minIdx];
+            arr[minIdx] = arr[i];
+            arr[i] = temp;
+        }
+    }
+
+    private void invertir(int[] arr) {
+        for (int i = 0; i < arr.length / 2; i++) {
+            int temp = arr[i];
+            arr[i] = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = temp;
+        }
+    }
 }

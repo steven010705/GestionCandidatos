@@ -4,13 +4,13 @@
  */
 package co.edu.udistrital.model;
 
+
 /**
- *
- * @author bethods
+ * Característica: Valor total de prebendas sindicales recibidas.
  */
 public class PrebendasSindicales extends Evento {
-    
-    @Override
-    public void random(int c){}
-    
+    public PrebendasSindicales() {
+        super();
+    }
 }
+

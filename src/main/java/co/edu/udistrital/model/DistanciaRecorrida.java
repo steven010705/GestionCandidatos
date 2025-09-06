@@ -4,12 +4,13 @@
  */
 package co.edu.udistrital.model;
 
+
 /**
- *
- * @author bethods
+ * Característica: Distancia total recorrida en marchas.
  */
-public class DistanciaRecorrida extends Evento{
-    
-    @Override
-    public void random(int c){}
+public class DistanciaRecorrida extends Evento {
+    public DistanciaRecorrida() {
+        super();
+    }
 }
+

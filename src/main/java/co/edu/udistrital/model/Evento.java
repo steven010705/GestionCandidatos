@@ -4,14 +4,38 @@
  */
 package co.edu.udistrital.model;
 
+
+import java.util.Random;
+
 /**
- *
- * @author bethods
+ * Clase base para representar un evento cuantificable (ej: horas perdidas, sobornos).
+ * 
+ * Cada evento tiene un valor entero (cantidad), que puede ser generado aleatoriamente.
  */
-public class Evento {
-    private int cantidad;
-    
-    public void random(int c){
-        
+public abstract class Evento {
+    protected int cantidad;
+
+    public Evento() {
+        this.cantidad = 0;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    /**
+     * Genera un valor aleatorio en el rango [1, m].
+     * 
+     * @param m valor máximo permitido
+     * @param random generador de números aleatorios (para reproducibilidad)
+     */
+    public void random(int m, Random random) {
+        this.cantidad = 1 + random.nextInt(m);
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(cantidad);
     }
 }
+
