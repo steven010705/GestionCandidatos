@@ -4,23 +4,36 @@
  */
 package co.edu.udistrital.model;
 
-/**
- *
- * @author sedel
- */
+import java.util.Arrays;
+
+
 public class Candidato {
-    
     private int id;
+    private Caracteristica caracteristicas;
     
     public Candidato(int id){
         this.id = id;
+        this.caracteristicas = new int[numCaracteristicas];
     }
-    
-    public void setId(int id){
-        this.id = id;
-    }
-    
-    public int getId(){
+
+    public int getId() {
         return id;
     }
+
+    public void setCaracteristica(int index, int valor) {
+        this.caracteristicas[index] = valor;
+    }
+
+    public int getCaracteristica(int index) {
+        return this.caracteristicas[index];
+    }
+
+    @Override
+    public String toString() {
+        return "Candidato{" +
+                "id=" + id +
+                ", caracteristicas=" + Arrays.toString(caracteristicas) +
+                '}';
+    }
 }
+

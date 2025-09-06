@@ -3,14 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package co.edu.udistrital.model;
+;
 
 /**
- *
- * @author bethods
+ * Característica: Valor total atribuido a actos de corrupción en los que han participado.
  */
 public class TotalCorrupcion extends Evento {
-    
-    @Override
-    public void random(int c){}
-    
+    public TotalCorrupcion() {
+        super();
+    }
 }
+

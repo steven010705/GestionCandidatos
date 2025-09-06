@@ -4,13 +4,13 @@
  */
 package co.edu.udistrital.model;
 
+
 /**
- *
- * @author bethods
+ * Característica: Número de políticos de los que han recibido sobornos.
  */
 public class SobornosRecibidos extends Evento {
-    
-    @Override
-    public void random(int c){}
-    
+    public SobornosRecibidos() {
+        super();
+    }
 }
+
