@@ -4,13 +4,12 @@
  */
 package co.edu.udistrital.model;
 
+
 /**
- *
- * @author bethods
+ * Característica: Horas de clase perdidas por bloqueos.
  */
-public class HorasPerdidas extends Evento{
-    
-    @Override
-    public void random(int c){}
-    
+public class HorasPerdidas extends Evento {
+    public HorasPerdidas() {
+        super();
+    }
 }
