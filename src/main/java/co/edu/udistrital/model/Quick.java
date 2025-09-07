@@ -5,10 +5,11 @@
 package co.edu.udistrital.model;
 
 
-/**
+/*
  * Implementación del algoritmo QuickSort
  * Asignado a la característica: TotalCorrupcion
  */
+
 public class Quick extends Ordenamiento {
 
     @Override

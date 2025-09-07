@@ -5,10 +5,11 @@
 package co.edu.udistrital.model;
 
 
-/**
+/*
  * Implementación del algoritmo de Burbuja
  * Asignado a la característica: HorasPerdidas
  */
+
 public class Burbuja extends Ordenamiento {
 
     @Override

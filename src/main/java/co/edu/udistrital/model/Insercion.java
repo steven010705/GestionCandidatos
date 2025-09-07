@@ -4,10 +4,11 @@
  */
 package co.edu.udistrital.model;
 
-/**
+/*
  * Implementación del algoritmo de Inserción Asignado a la característica:
  * DistanciaRecorrida
  */
+
 public class Insercion extends Ordenamiento {
 
     @Override

@@ -4,10 +4,11 @@
  */
 package co.edu.udistrital.model;
 
-/**
+/*
  * Implementación del algoritmo MergeSort Asignado a la característica:
  * PrebendasSindicales
  */
+
 public class Merge extends Ordenamiento {
 
     @Override

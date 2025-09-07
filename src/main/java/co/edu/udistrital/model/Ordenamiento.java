@@ -4,16 +4,15 @@
  */
 package co.edu.udistrital.model;
 
-
-
-/**
+/*
  * Clase abstracta que define la estructura de los algoritmos de ordenamiento.
  * Cada característica del candidato será ordenada con un tipo específico
  * de algoritmo.
  */
+
 public abstract class Ordenamiento {
 
-    /**
+    /*
      * Método abstracto para ordenar en orden invertido.
      *
      * @param datos Arreglo de enteros a ordenar
@@ -21,7 +20,7 @@ public abstract class Ordenamiento {
      */
     public abstract int[] Invertido(int[] datos);
 
-    /**
+    /*
      * Método abstracto para ordenar en forma levemente ordenada.
      *
      * @param datos Arreglo de enteros a ordenar
@@ -29,7 +28,7 @@ public abstract class Ordenamiento {
      */
     public abstract int[] LevementeOrdenado(int[] datos);
 
-    /**
+    /*
      * Método abstracto para ordenar de manera aleatoria.
      *
      * @param datos Arreglo de enteros a ordenar
@@ -37,7 +36,7 @@ public abstract class Ordenamiento {
      */
     public abstract int[] Aleatorio(int[] datos);
 
-    /**
+    /*
      * Método estático que selecciona el tipo de ordenamiento según la
      * característica del candidato.
      *

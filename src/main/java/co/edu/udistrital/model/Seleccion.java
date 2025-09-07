@@ -4,10 +4,11 @@
  */
 package co.edu.udistrital.model;
 
-/**
+/*
  * Implementación del algoritmo de Selección Asignado a la característica:
  * SobornosRecibidos
  */
+
 public class Seleccion extends Ordenamiento {
 
     @Override
