@@ -1,13 +1,10 @@
 package co.edu.udistrital.controller;
 
-
-import co.edu.udistrital.controller.Control;
-
-/**
- * Punto de entrada de la aplicación.
- * Llama al controlador para generar candidatos, ejecutar los algoritmos
- * y exportar resultados a CSV.
- */
+/*
+ 
+Punto de entrada de la aplicación.
+Llama al controlador para generar candidatos, ejecutar los algoritmos
+y exportar resultados a CSV.*/
 public class GestionCandidatos {
     public static void main(String[] args) {
         int N = 500;           // número de candidatos

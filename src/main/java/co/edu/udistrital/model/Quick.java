@@ -4,11 +4,7 @@
  */
 package co.edu.udistrital.model;
 
-
-
-import co.edu.udistrital.model.Candidato;
-
-/**
+/*
  * QuickSort instrumentado (partición de Lomuto).
  *
  * Detalles:

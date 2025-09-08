@@ -4,10 +4,7 @@
  */
 package co.edu.udistrital.model;
 
-
-import co.edu.udistrital.model.Candidato;
-
-/**
+/*
  * Insercion (Insertion Sort) instrumentado.
  *
  * Detalles:

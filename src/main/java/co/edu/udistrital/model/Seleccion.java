@@ -4,9 +4,7 @@
  */
 package co.edu.udistrital.model;
 
-import co.edu.udistrital.model.Candidato;
-
-/**
+/*
  * Seleccion (Selection Sort) instrumentado.
  *
  * Detalles:
@@ -43,5 +41,4 @@ public class Seleccion extends Ordenamiento {
         }
     }
 }
-
 

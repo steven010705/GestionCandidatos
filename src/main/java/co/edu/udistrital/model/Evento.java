@@ -7,7 +7,7 @@ package co.edu.udistrital.model;
 
 import java.util.Random;
 
-/**
+/*
  * Evento - clase base ligera que representa un valor entero cuantificable.
  *
  * Propósito:
@@ -30,7 +30,7 @@ public abstract class Evento {
         this.cantidad = 0;
     }
 
-    /**
+    /*
      * Devuelve el valor del evento.
      * @return valor entero actual (0 si no se ha generado)
      */
@@ -38,7 +38,7 @@ public abstract class Evento {
         return cantidad;
     }
 
-    /**
+    /*
      * Genera y asigna un valor entero uniforme en [1, m].
      *
      * Precondición: m >= 1.
@@ -56,4 +56,3 @@ public abstract class Evento {
         return String.valueOf(cantidad);
     }
 }
-

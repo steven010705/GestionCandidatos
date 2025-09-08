@@ -5,12 +5,11 @@
 package co.edu.udistrital.model;
 
 
-import co.edu.udistrital.model.Candidato;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Random;
 
-/**
+/*
  * Ordenamiento (abstracto)
  *
  * Clase base para todos los algoritmos instrumentados. Provee:
@@ -50,7 +49,7 @@ public abstract class Ordenamiento {
     protected final int atributoIndex;
     protected final String nombre;
 
-    /**
+    /*
      * Constructor protegido: las subclases deben pasar el índice de atributo asociado.
      *
      * @param atributoIndex índice 0..4 que indica la característica utilizada
@@ -64,7 +63,7 @@ public abstract class Ordenamiento {
         reset();
     }
 
-    /** Resetea contadores a cero (invocar antes de cada medición si se reutiliza la instancia). */
+    /* Resetea contadores a cero (invocar antes de cada medición si se reutiliza la instancia). */
     public void reset() {
         comparaciones = 0;
         intercambios = 0;
@@ -75,7 +74,7 @@ public abstract class Ordenamiento {
     public int getAtributoIndex() { return atributoIndex; }
     public String getNombre() { return nombre; }
 
-    /**
+    /*
      * Implementación concreta del algoritmo instrumentado.
      * - Debe usar comparar(...) e intercambiar(...) para que las métricas se acumulen.
      * - Debe ordenar el arreglo IN-PLACE en orden no decreciente por la característica.
@@ -88,7 +87,7 @@ public abstract class Ordenamiento {
     // Métodos que preparan la entrada y llaman a ordenar(...) instrumentado
     // ------------------------
 
-    /**
+    /*
      * Prepara entrada aleatoria (barajar) y ejecuta el algoritmo instrumentado.
      * NOTA: la preparación (barajear) NO cuenta en las métricas.
      *
@@ -102,7 +101,7 @@ public abstract class Ordenamiento {
         ordenar(arreglo);
     }
 
-    /**
+    /*
      * Prepara entrada invertida (orden descendente por atributo) y ejecuta el algoritmo.
      * NOTA: la preparación NO cuenta para métricas.
      *
@@ -116,7 +115,7 @@ public abstract class Ordenamiento {
         ordenar(arreglo);
     }
 
-    /**
+    /*
      * Prepara entrada levemente ordenada: ordena ascendentemente y realiza unos pocos swaps.
      * NOTA: la preparación NO cuenta para métricas.
      *
@@ -143,7 +142,7 @@ public abstract class Ordenamiento {
         }
     }
 
-    /** Ordena descendentemente por atributoIndex (sin contar métricas). */
+    /* Ordena descendentemente por atributoIndex (sin contar métricas). */
     protected void prepararInvertido(Candidato[] arr) {
         if (arr == null || arr.length < 2) return;
         Arrays.sort(arr, new Comparator<Candidato>() {
@@ -155,7 +154,7 @@ public abstract class Ordenamiento {
         });
     }
 
-    /**
+    /*
      * Ordena ascendentemente (sin contar métricas) y realiza ~5% swaps aleatorios.
      * Esto produce una entrada "levemente ordenada".
      */
@@ -181,7 +180,7 @@ public abstract class Ordenamiento {
     // Operaciones instrumentadas que las subclases deben usar
     // ------------------------
 
-    /**
+    /*
      * Compara dos candidatos por el atributo asociado. Incrementa contador de comparaciones.
      *
      * @param a candidato A
@@ -194,7 +193,7 @@ public abstract class Ordenamiento {
                                b.getValorCaracteristica(atributoIndex));
     }
 
-    /**
+    /*
      * Intercambia dos posiciones e incrementa contador de intercambios.
      * Se considera un "intercambio" cada vez que se realiza un swap de posiciones.
      *
@@ -213,7 +212,7 @@ public abstract class Ordenamiento {
     // Validación (no instrumentada)
     // ------------------------
 
-    /**
+    /*
      * Verifica que el arreglo esté en orden no decreciente por el atributo asociado.
      * No altera los contadores (usa acceso directo a getValorCaracteristica).
      *
@@ -230,6 +229,5 @@ public abstract class Ordenamiento {
         return true;
     }
 }
-
 
 

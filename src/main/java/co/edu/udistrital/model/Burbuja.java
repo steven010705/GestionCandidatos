@@ -4,10 +4,7 @@
  */
 package co.edu.udistrital.model;
 
-
-import co.edu.udistrital.model.Candidato;
-
-/**
+/*
  * Burbuja (Bubble Sort) instrumentado.
  *
  * Detalles:
@@ -48,5 +45,4 @@ public class Burbuja extends Ordenamiento {
         }
     }
 }
-
 
