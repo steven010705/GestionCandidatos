@@ -12,7 +12,7 @@ package co.edu.udistrital.model;
 public class Seleccion extends Ordenamiento {
 
     @Override
-    public int[] Invertido(int[] datos) {
+    public int[] invertido(int[] datos) {
         int[] copia = datos.clone();
         selectionSort(copia);
         invertir(copia);
@@ -20,7 +20,7 @@ public class Seleccion extends Ordenamiento {
     }
 
     @Override
-    public int[] LevementeOrdenado(int[] datos) {
+    public int[] levementeOrdenado(int[] datos) {
         int[] copia = datos.clone();
         // Ordenar parcialmente (solo mitad del arreglo)
         for (int i = 0; i < copia.length / 2; i++) {
@@ -38,7 +38,7 @@ public class Seleccion extends Ordenamiento {
     }
 
     @Override
-    public int[] Aleatorio(int[] datos) {
+    public int[] aleatorio(int[] datos) {
         int[] copia = datos.clone();
         selectionSort(copia);
         return copia;

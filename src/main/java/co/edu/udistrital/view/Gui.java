@@ -4,6 +4,12 @@
  */
 package co.edu.udistrital.view;
 
+import co.edu.udistrital.model.Burbuja;
+import co.edu.udistrital.model.Insercion;
+import co.edu.udistrital.model.Merge;
+import co.edu.udistrital.model.Quick;
+import co.edu.udistrital.model.Seleccion;
+
 /**
  *
  * @author bethods
@@ -181,27 +187,94 @@ public class Gui extends javax.swing.JFrame {
 
     private void distribucionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_distribucionActionPerformed
         // TODO add your handling code here:
+        Burbuja burbuja = new Burbuja();
+        String d = (String) distribucion.getSelectedItem();
+        switch (d) {
+            case "Aleatoria":
+                burbuja.bubbleSort(datos);
+                break;
+            case "Leve":
+                burbuja.bubbleSortParcial(datos);
+                break;
+            case "Inversa":
+                burbuja.invertir(datos);
+                break;
+        }
     }//GEN-LAST:event_distribucionActionPerformed
 
     private void distribucion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_distribucion1ActionPerformed
         // TODO add your handling code here:
+        Insercion insercion = new Insercion();
+        String e = (String) distribucion1.getSelectedItem();
+        switch (e) {
+            case "Aleatoria":
+                insercion.insertionSort(datos);
+                break;
+            case "Leve":
+                insercion.levementeOrdenado(datos);
+                break;
+            case "Inversa":
+                insercion.invertir(datos);
+                break;
+        }
     }//GEN-LAST:event_distribucion1ActionPerformed
 
     private void distribucion2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_distribucion2ActionPerformed
         // TODO add your handling code here:
+        Merge merge = new Merge();
+        String f = (String) distribucion2.getSelectedItem();
+        switch (f) {
+            case "Aleatoria":
+                merge.aleatorio(datos);
+                break;
+            case "Leve":
+                merge.levementeOrdenado(datos);
+                break;
+            case "Inversa":
+                merge.invertir(datos);
+                break;
+        }
     }//GEN-LAST:event_distribucion2ActionPerformed
 
     private void distribucion3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_distribucion3ActionPerformed
         // TODO add your handling code here:
+        Seleccion seleccion = new Seleccion();
+        String g = (String) distribucion3.getSelectedItem();
+        switch (g) {
+            case "Aleatoria":
+                seleccion.aleatorio(datos);
+                break;
+            case "Leve":
+                seleccion.levementeOrdenado(datos);
+                break;
+            case "Inversa":
+                seleccion.invertido(datos);
+                break;
+        }
     }//GEN-LAST:event_distribucion3ActionPerformed
 
     private void distribucion4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_distribucion4ActionPerformed
         // TODO add your handling code here:
+        Quick quick = new Quick();
+        String h = (String) distribucion1.getSelectedItem();
+        switch (h) {
+            case "Aleatoria":
+                quick.aleatorio(datos);
+                break;
+            case "Leve":
+                quick.levementeOrdenado(datos);
+                break;
+            case "Inversa":
+                quick.invertir(datos);
+                break;
+        }
     }//GEN-LAST:event_distribucion4ActionPerformed
 
     private void continuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continuarActionPerformed
         // TODO add your handling code here:
-        
+        Vista vista = new Vista();
+        vista.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_continuarActionPerformed
 
     /**

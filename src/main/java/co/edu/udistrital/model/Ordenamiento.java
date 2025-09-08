@@ -18,7 +18,7 @@ public abstract class Ordenamiento {
      * @param datos Arreglo de enteros a ordenar
      * @return Arreglo ordenado
      */
-    public abstract int[] Invertido(int[] datos);
+    public abstract int[] invertido(int[] datos);
 
     /*
      * Método abstracto para ordenar en forma levemente ordenada.
@@ -26,7 +26,7 @@ public abstract class Ordenamiento {
      * @param datos Arreglo de enteros a ordenar
      * @return Arreglo ordenado
      */
-    public abstract int[] LevementeOrdenado(int[] datos);
+    public abstract int[] levementeOrdenado(int[] datos);
 
     /*
      * Método abstracto para ordenar de manera aleatoria.
@@ -34,7 +34,7 @@ public abstract class Ordenamiento {
      * @param datos Arreglo de enteros a ordenar
      * @return Arreglo ordenado
      */
-    public abstract int[] Aleatorio(int[] datos);
+    public abstract int[] aleatorio(int[] datos);
 
     /*
      * Método estático que selecciona el tipo de ordenamiento según la

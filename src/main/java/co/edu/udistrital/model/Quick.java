@@ -13,7 +13,7 @@ package co.edu.udistrital.model;
 public class Quick extends Ordenamiento {
 
     @Override
-    public int[] Invertido(int[] datos) {
+    public int[] invertido(int[] datos) {
         int[] copia = datos.clone();
         quickSort(copia, 0, copia.length - 1);
         invertir(copia);
@@ -21,7 +21,7 @@ public class Quick extends Ordenamiento {
     }
 
     @Override
-    public int[] LevementeOrdenado(int[] datos) {
+    public int[] levementeOrdenado(int[] datos) {
         int[] copia = datos.clone();
         // Ordenar parcialmente (primeros 5 elementos)
         quickSort(copia, 0, Math.min(4, copia.length - 1));
@@ -29,7 +29,7 @@ public class Quick extends Ordenamiento {
     }
 
     @Override
-    public int[] Aleatorio(int[] datos) {
+    public int[] aleatorio(int[] datos) {
         int[] copia = datos.clone();
         quickSort(copia, 0, copia.length - 1);
         return copia;

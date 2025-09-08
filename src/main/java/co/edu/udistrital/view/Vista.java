@@ -49,6 +49,11 @@ public class Vista extends javax.swing.JFrame {
         });
 
         reporte.setText("Ver reporte");
+        reporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reporteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -109,6 +114,11 @@ public class Vista extends javax.swing.JFrame {
     private void candidato1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_candidato1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_candidato1ActionPerformed
+
+    private void reporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reporteActionPerformed
+        // TODO add your handling code here:
+        //Código que descarga el json con los registros
+    }//GEN-LAST:event_reporteActionPerformed
 
     /**
      * @param args the command line arguments

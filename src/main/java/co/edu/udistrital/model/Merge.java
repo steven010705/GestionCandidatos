@@ -12,7 +12,7 @@ package co.edu.udistrital.model;
 public class Merge extends Ordenamiento {
 
     @Override
-    public int[] Invertido(int[] datos) {
+    public int[] invertido(int[] datos) {
         int[] copia = datos.clone();
         mergeSort(copia, 0, copia.length - 1);
         invertir(copia);
@@ -20,7 +20,7 @@ public class Merge extends Ordenamiento {
     }
 
     @Override
-    public int[] LevementeOrdenado(int[] datos) {
+    public int[] levementeOrdenado(int[] datos) {
         int[] copia = datos.clone();
         // Ordenar solo la primera mitad
         mergeSort(copia, 0, copia.length / 2);
@@ -28,7 +28,7 @@ public class Merge extends Ordenamiento {
     }
 
     @Override
-    public int[] Aleatorio(int[] datos) {
+    public int[] aleatorio(int[] datos) {
         int[] copia = datos.clone();
         mergeSort(copia, 0, copia.length - 1);
         return copia;

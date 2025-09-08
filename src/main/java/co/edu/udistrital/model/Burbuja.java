@@ -13,7 +13,7 @@ package co.edu.udistrital.model;
 public class Burbuja extends Ordenamiento {
 
     @Override
-    public int[] Invertido(int[] datos) {
+    public int[] invertido(int[] datos) {
         int[] copia = datos.clone();
         bubbleSort(copia);
         invertir(copia);
@@ -21,7 +21,7 @@ public class Burbuja extends Ordenamiento {
     }
 
     @Override
-    public int[] LevementeOrdenado(int[] datos) {
+    public int[] levementeOrdenado(int[] datos) {
         // Simulación: ordenar parcialmente (primeros 3 elementos)
         int[] copia = datos.clone();
         for (int i = 0; i < Math.min(3, copia.length); i++) {
@@ -31,7 +31,7 @@ public class Burbuja extends Ordenamiento {
     }
 
     @Override
-    public int[] Aleatorio(int[] datos) {
+    public int[] aleatorio(int[] datos) {
         // Simplemente aplica bubble sort completo
         int[] copia = datos.clone();
         bubbleSort(copia);
