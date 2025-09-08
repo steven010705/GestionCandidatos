@@ -16,7 +16,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 
-/**
+/*
  * Clase Control (Controller en el patrón MVC).
  *
  * Su responsabilidad principal es coordinar el flujo del programa:
@@ -39,7 +39,7 @@ public class Control {
 
     private final Random rnd;
 
-    /**
+    /*
      * Constructor del controlador.
      * @param n número de candidatos
      * @param m máximo de valor de característica
@@ -54,7 +54,7 @@ public class Control {
         this.rnd = new Random(semilla);
     }
 
-    /**
+    /*
      * Genera un arreglo de candidatos con valores aleatorios.
      * Cada candidato obtiene valores en [1, m] para las 5 características.
      * @return arreglo de N candidatos
@@ -68,7 +68,7 @@ public class Control {
         return arr;
     }
 
-    /**
+    /*
      * Ejecuta un conjunto de algoritmos sobre todas las distribuciones,
      * repitiendo cada experimento "repeticiones" veces.
      * Exporta los resultados a un archivo CSV.

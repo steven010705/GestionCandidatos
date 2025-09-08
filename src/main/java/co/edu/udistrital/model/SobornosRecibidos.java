@@ -5,7 +5,7 @@
 package co.edu.udistrital.model;
 
 
-/**
+/*
  * Característica: Número de políticos de los que han recibido sobornos.
  */
 public class SobornosRecibidos extends Evento {

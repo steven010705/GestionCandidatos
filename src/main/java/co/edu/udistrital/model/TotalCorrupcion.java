@@ -5,7 +5,7 @@
 package co.edu.udistrital.model;
 ;
 
-/**
+/*
  * Característica: Valor total atribuido a actos de corrupción en los que han participado.
  */
 public class TotalCorrupcion extends Evento {

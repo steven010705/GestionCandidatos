@@ -6,7 +6,7 @@ package co.edu.udistrital.model;
 
 import java.util.Random;
 
-/**
+/*
  * Caracteristica
  *
  * Contenedor de las cinco subcaracterísticas requeridas por candidato.
@@ -41,7 +41,7 @@ public class Caracteristica {
         this.totalCorrupcion = new TotalCorrupcion();
     }
 
-    /**
+    /*
      * Genera los 5 valores en el rango [1, m] usando el Random provisto.
      *
      * @param m tope máximo (>=1)
@@ -55,7 +55,7 @@ public class Caracteristica {
         totalCorrupcion.random(m, rnd);
     }
 
-    /**
+    /*
      * Devuelve el valor de la característica indicada por índice.
      *
      * @param index índice 0..4
@@ -74,7 +74,7 @@ public class Caracteristica {
         }
     }
 
-    /**
+    /*
      * Devuelve los 5 valores en un arreglo (orden fijo).
      * @return int[5]
      */

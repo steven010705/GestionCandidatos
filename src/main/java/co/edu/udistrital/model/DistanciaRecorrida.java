@@ -5,7 +5,7 @@
 package co.edu.udistrital.model;
 
 
-/**
+/*
  * Característica: Distancia total recorrida en marchas.
  */
 public class DistanciaRecorrida extends Evento {

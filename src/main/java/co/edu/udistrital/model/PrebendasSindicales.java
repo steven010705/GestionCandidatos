@@ -5,7 +5,7 @@
 package co.edu.udistrital.model;
 
 
-/**
+/*
  * Característica: Valor total de prebendas sindicales recibidas.
  */
 public class PrebendasSindicales extends Evento {
