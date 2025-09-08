@@ -148,8 +148,8 @@ public abstract class Ordenamiento {
         Arrays.sort(arr, new Comparator<Candidato>() {
             @Override
             public int compare(Candidato a, Candidato b) {
-                return Integer.compare(b.getValorCaracteristica(atributoIndex),
-                                       a.getValorCaracteristica(atributoIndex));
+                return Integer.compare(b.getCaracteristica(atributoIndex),
+                                       a.getCaracteristica(atributoIndex));
             }
         });
     }
@@ -163,8 +163,8 @@ public abstract class Ordenamiento {
         Arrays.sort(arr, new Comparator<Candidato>() {
             @Override
             public int compare(Candidato a, Candidato b) {
-                return Integer.compare(a.getValorCaracteristica(atributoIndex),
-                                       b.getValorCaracteristica(atributoIndex));
+                return Integer.compare(a.getCaracteristica(atributoIndex),
+                                       b.getCaracteristica(atributoIndex));
             }
         });
         int n = arr.length;
@@ -189,8 +189,8 @@ public abstract class Ordenamiento {
      */
     protected int comparar(Candidato a, Candidato b) {
         comparaciones++;
-        return Integer.compare(a.getValorCaracteristica(atributoIndex),
-                               b.getValorCaracteristica(atributoIndex));
+        return Integer.compare(a.getCaracteristica(atributoIndex),
+                               b.getCaracteristica(atributoIndex));
     }
 
     /*
@@ -222,8 +222,8 @@ public abstract class Ordenamiento {
     public boolean validarOrdenNoDecreciente(Candidato[] arr) {
         if (arr == null || arr.length < 2) return true;
         for (int i = 0; i < arr.length - 1; i++) {
-            int a = arr[i].getValorCaracteristica(atributoIndex);
-            int b = arr[i+1].getValorCaracteristica(atributoIndex);
+            int a = arr[i].getCaracteristica(atributoIndex);
+            int b = arr[i+1].getCaracteristica(atributoIndex);
             if (a > b) return false;
         }
         return true;

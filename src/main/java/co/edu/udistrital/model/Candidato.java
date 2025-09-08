@@ -5,67 +5,102 @@
 package co.edu.udistrital.model;
 
 
-import java.util.Random;
 
-/*
- * Candidato
+
+/**
+ * Representa a un candidato en el proceso electoral.
  *
- * Representa un candidato del universo sintético.
- *
- * Atributos:
- * - id (entero único)
- * - caracteristica : objeto Caracteristica que contiene los 5 valores
- *
- * NOTAS:
- * - La generación de valores se delega a la clase Caracteristica.
- * - No duplicamos los atributos numéricos como campos sueltos por requerimiento.
+ * Cada candidato tiene:
+ * - un id único,
+ * - un nombre,
+ * - un conjunto de características numéricas (almacenadas en un arreglo paralelo a los nombres).
  */
 public class Candidato {
-    private final int id;
-    private final Caracteristica caracteristica;
 
-    /*
-     * Crea un candidato con id. Los valores deben generarse con generarValores.
-     * @param id identificador único (se recomienda 1..N)
+    private final int id;              // Identificador único
+    private final String nombre;       // Nombre del candidato
+    private final int[] caracteristicas; // Arreglo de valores enteros de características
+
+    // Lista fija de nombres de características (mismo orden en todo el sistema)
+    public static final String[] NOMBRES_CARACTERISTICAS = {
+            "DistanciaRecorrida",
+            "HorasPerdidas",
+            "PrebendasSindicales",
+            "SobornosRecibidos",
+            "TotalCorrupcion"
+    };
+
+    /**
+     * Constructor de Candidato.
+     *
+     * @param id identificador único
+     * @param nombre nombre del candidato
      */
-    public Candidato(int id) {
+    public Candidato(int id, String nombre) {
         this.id = id;
-        this.caracteristica = new Caracteristica();
+        this.nombre = nombre;
+        this.caracteristicas = new int[NOMBRES_CARACTERISTICAS.length];
     }
 
+    /**
+     * Asigna el valor a una característica específica según su índice.
+     *
+     * @param indice posición de la característica (0 a 4)
+     * @param valor valor entero a asignar
+     */
+    public void setCaracteristica(int indice, int valor) {
+        if (indice >= 0 && indice < caracteristicas.length) {
+            caracteristicas[indice] = valor;
+        }
+    }
+
+    /**
+     * Obtiene el valor de una característica según su índice.
+     *
+     * @param indice posición de la característica
+     * @return valor correspondiente
+     */
+    public int getCaracteristica(int indice) {
+        if (indice >= 0 && indice < caracteristicas.length) {
+            return caracteristicas[indice];
+        }
+        throw new IllegalArgumentException("Índice de característica inválido");
+    }
+
+    /**
+     * @return identificador único
+     */
     public int getId() {
         return id;
     }
 
-    public Caracteristica getCaracteristicaObj() {
-        return caracteristica;
+    /**
+     * @return nombre del candidato
+     */
+    public String getNombre() {
+        return nombre;
     }
 
-    /*
-     * Genera aleatoriamente las 5 características dentro de [1, m].
-     * @param m máximo inclusive (m>=1)
-     * @param rnd Random con semilla para reproducibilidad
+    /**
+     * @return arreglo completo de características
      */
-    public void generarValores(int m, Random rnd) {
-        caracteristica.generarValores(m, rnd);
-    }
-
-    /*
-     * Acceso rápido a la característica por índice (0..4).
-     * @param index índice
-     * @return valor de la característica
-     */
-    public int getValorCaracteristica(int index) {
-        return caracteristica.getValor(index);
+    public int[] getCaracteristicas() {
+        return caracteristicas;
     }
 
     @Override
     public String toString() {
-        return "Candidato{" +
-                "id=" + id +
-                ", caracteristica=" + caracteristica +
-                '}';
+        StringBuilder sb = new StringBuilder("Candidato{id=" + id + ", nombre='" + nombre + "', ");
+        for (int i = 0; i < caracteristicas.length; i++) {
+            sb.append(NOMBRES_CARACTERISTICAS[i])
+              .append("=")
+              .append(caracteristicas[i]);
+            if (i < caracteristicas.length - 1) sb.append(", ");
+        }
+        sb.append("}");
+        return sb.toString();
     }
 }
+
 
 
