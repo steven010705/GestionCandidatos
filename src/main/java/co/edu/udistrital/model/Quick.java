@@ -5,67 +5,57 @@
 package co.edu.udistrital.model;
 
 
-/*
- * Implementación del algoritmo QuickSort
- * Asignado a la característica: TotalCorrupcion
- */
 
+import co.edu.udistrital.model.Candidato;
+
+/**
+ * QuickSort instrumentado (partición de Lomuto).
+ *
+ * Detalles:
+ * - Atributo asociado: índice 4 (TotalCorrupcion).
+ * - Métricas:
+ *    - comparaciones: cada comparación arr[j] <= pivot (comparar arr[j] con pivot).
+ *    - intercambios: cada swap realizado.
+ *
+ * Complejidad:
+ * - Tiempo: O(n^2) peor caso (ej. arreglo ya ordenado con pivot malo), O(n log n) promedio.
+ * - Espacio: O(log n) pila recursiva promedio.
+ *
+ * Notas:
+ * - Para mayor robustez en producción se suele aleatorizar el pivot; aquí usamos
+ *   pivot = arr[high] (Lomuto) por simplicidad. Si quieres aleatorizar, lo puedo adaptar.
+ */
 public class Quick extends Ordenamiento {
 
-    @Override
-    public int[] Invertido(int[] datos) {
-        int[] copia = datos.clone();
-        quickSort(copia, 0, copia.length - 1);
-        invertir(copia);
-        return copia;
+    public Quick() {
+        super(4, "Quick (TotalCorrupcion)");
     }
 
     @Override
-    public int[] LevementeOrdenado(int[] datos) {
-        int[] copia = datos.clone();
-        // Ordenar parcialmente (primeros 5 elementos)
-        quickSort(copia, 0, Math.min(4, copia.length - 1));
-        return copia;
+    protected void ordenar(Candidato[] arr) {
+        if (arr == null || arr.length < 2) return;
+        ordenarRec(arr, 0, arr.length - 1);
     }
 
-    @Override
-    public int[] Aleatorio(int[] datos) {
-        int[] copia = datos.clone();
-        quickSort(copia, 0, copia.length - 1);
-        return copia;
-    }
-
-    private void quickSort(int[] arr, int low, int high) {
+    private void ordenarRec(Candidato[] arr, int low, int high) {
         if (low < high) {
-            int pi = partition(arr, low, high);
-            quickSort(arr, low, pi - 1);
-            quickSort(arr, pi + 1, high);
+            int p = particion(arr, low, high);
+            ordenarRec(arr, low, p - 1);
+            ordenarRec(arr, p + 1, high);
         }
     }
 
-    private int partition(int[] arr, int low, int high) {
-        int pivot = arr[high];
+    private int particion(Candidato[] arr, int low, int high) {
+        Candidato pivot = arr[high];
         int i = low - 1;
         for (int j = low; j < high; j++) {
-            if (arr[j] <= pivot) {
+            // comparar inc. comparaciones
+            if (comparar(arr[j], pivot) <= 0) {
                 i++;
-                int temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
+                intercambiar(arr, i, j);
             }
         }
-        int temp = arr[i + 1];
-        arr[i + 1] = arr[high];
-        arr[high] = temp;
+        intercambiar(arr, i + 1, high);
         return i + 1;
     }
-
-    private void invertir(int[] arr) {
-        for (int i = 0; i < arr.length / 2; i++) {
-            int temp = arr[i];
-            arr[i] = arr[arr.length - 1 - i];
-            arr[arr.length - 1 - i] = temp;
-        }
-    }
 }
-

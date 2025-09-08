@@ -4,65 +4,44 @@
  */
 package co.edu.udistrital.model;
 
-/*
- * Implementación del algoritmo de Selección Asignado a la característica:
- * SobornosRecibidos
- */
+import co.edu.udistrital.model.Candidato;
 
+/**
+ * Seleccion (Selection Sort) instrumentado.
+ *
+ * Detalles:
+ * - Atributo asociado: índice 3 (PrebendasSindicales).
+ * - Algoritmo: para cada posición i encuentra el mínimo en [i..n-1] y lo swap con i.
+ * - Métricas:
+ *    - comparaciones: cada evaluación arr[j] < arr[minIdx]
+ *    - intercambios: cada swap realizado (una sola vez por iteración si minIdx != i)
+ *
+ * Complejidad:
+ * - Tiempo: O(n^2) siempre.
+ * - Espacio: O(1) auxiliar.
+ */
 public class Seleccion extends Ordenamiento {
 
-    @Override
-    public int[] Invertido(int[] datos) {
-        int[] copia = datos.clone();
-        selectionSort(copia);
-        invertir(copia);
-        return copia;
+    public Seleccion() {
+        super(3, "Seleccion (PrebendasSindicales)");
     }
 
     @Override
-    public int[] LevementeOrdenado(int[] datos) {
-        int[] copia = datos.clone();
-        // Ordenar parcialmente (solo mitad del arreglo)
-        for (int i = 0; i < copia.length / 2; i++) {
+    protected void ordenar(Candidato[] arr) {
+        if (arr == null || arr.length < 2) return;
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
             int minIdx = i;
-            for (int j = i + 1; j < copia.length / 2; j++) {
-                if (copia[j] < copia[minIdx]) {
+            for (int j = i + 1; j < n; j++) {
+                if (comparar(arr[j], arr[minIdx]) < 0) {
                     minIdx = j;
                 }
             }
-            int temp = copia[minIdx];
-            copia[minIdx] = copia[i];
-            copia[i] = temp;
-        }
-        return copia;
-    }
-
-    @Override
-    public int[] Aleatorio(int[] datos) {
-        int[] copia = datos.clone();
-        selectionSort(copia);
-        return copia;
-    }
-
-    private void selectionSort(int[] arr) {
-        for (int i = 0; i < arr.length - 1; i++) {
-            int minIdx = i;
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[j] < arr[minIdx]) {
-                    minIdx = j;
-                }
+            if (minIdx != i) {
+                intercambiar(arr, i, minIdx);
             }
-            int temp = arr[minIdx];
-            arr[minIdx] = arr[i];
-            arr[i] = temp;
-        }
-    }
-
-    private void invertir(int[] arr) {
-        for (int i = 0; i < arr.length / 2; i++) {
-            int temp = arr[i];
-            arr[i] = arr[arr.length - 1 - i];
-            arr[arr.length - 1 - i] = temp;
         }
     }
 }
+
+
