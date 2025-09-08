@@ -4,11 +4,11 @@
  */
 package co.edu.udistrital.model;
 
-
 /**
  * Característica: Horas de clase perdidas por bloqueos.
  */
 public class HorasPerdidas extends Evento {
+
     public HorasPerdidas() {
         super();
     }

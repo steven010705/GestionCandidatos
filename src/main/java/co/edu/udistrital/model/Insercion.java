@@ -5,60 +5,47 @@
 package co.edu.udistrital.model;
 
 /*
- * Implementación del algoritmo de Inserción Asignado a la característica:
- * DistanciaRecorrida
+ * Insercion (Insertion Sort) instrumentado.
+ *
+ * Detalles:
+ * - Atributo asociado: índice 1 (DistanciaRecorrida).
+ * - Algoritmo: toma el elemento key y lo inserta en la sublista ordenada.
+ * - Métricas:
+ *    - comparaciones: cada vez que se compara un elemento de la sublista con key.
+ *    - intercambios: aquí se cuentan las asignaciones de desplazamiento (arr[j+1]=arr[j])
+ *      y la asignación final de key (arr[j+1]=key) como movimientos/intercambios.
+ *
+ * Complejidad:
+ * - Tiempo: O(n^2) peor caso (invertido), O(n) mejor caso (casi ordenado).
+ * - Espacio: O(1) auxiliar.
+ *
+ * Notas:
+ * - Debido a que Insertion hace desplazamientos en vez de swaps, se contabilizan
+ *   como "intercambios" cada asignación que mueve un elemento.
  */
-
 public class Insercion extends Ordenamiento {
 
-    @Override
-    public int[] invertido(int[] datos) {
-        int[] copia = datos.clone();
-        insertionSort(copia);
-        invertir(copia);
-        return copia;
+    public Insercion() {
+        super(1, "Insercion (DistanciaRecorrida)");
     }
 
     @Override
-    public int[] levementeOrdenado(int[] datos) {
-        int[] copia = datos.clone();
-        // Ordenar parcialmente los primeros 5 elementos
-        for (int i = 1; i < Math.min(5, copia.length); i++) {
-            int key = copia[i];
+    protected void ordenar(Candidato[] arr) {
+        if (arr == null || arr.length < 2) return;
+        int n = arr.length;
+        for (int i = 1; i < n; i++) {
+            Candidato key = arr[i];
             int j = i - 1;
-            while (j >= 0 && copia[j] > key) {
-                copia[j + 1] = copia[j];
-                j--;
-            }
-            copia[j + 1] = key;
-        }
-        return copia;
-    }
-
-    @Override
-    public int[] aleatorio(int[] datos) {
-        int[] copia = datos.clone();
-        insertionSort(copia);
-        return copia;
-    }
-
-    private void insertionSort(int[] arr) {
-        for (int i = 1; i < arr.length; i++) {
-            int key = arr[i];
-            int j = i - 1;
-            while (j >= 0 && arr[j] > key) {
+            // mientras arr[j] > key (aumenta comparaciones)
+            while (j >= 0 && comparar(arr[j], key) > 0) {
+                // desplazar arr[j] a la derecha; cuenta como "intercambio" (movimiento)
                 arr[j + 1] = arr[j];
+                intercambios++;
                 j--;
             }
+            // colocar key en su posición (contamos la asignación final)
             arr[j + 1] = key;
-        }
-    }
-
-    private void invertir(int[] arr) {
-        for (int i = 0; i < arr.length / 2; i++) {
-            int temp = arr[i];
-            arr[i] = arr[arr.length - 1 - i];
-            arr[arr.length - 1 - i] = temp;
+            intercambios++;
         }
     }
 }
